@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | CFD Circle</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./favicon.ico" />
+
+    <!-- Tranh lap noi dung -->
+    <link rel="canonical" href="https://cfdcircle.vn" />
+
+    <!-- Meta website -->
+    <meta name="title" content="FinanceFlow - CFD Circle" />
+    <meta
+      name="description"
+      content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle"
+    />
+    <meta name="keyword" content="" />
+
+    <!-- Meta tag facebook -->
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="FinanceFlow - CFD Circle | Đào tạo lập trình thực chiến"
+    />
+    <meta
+      property="og:description"
+      content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle"
+    />
+    <meta property="og:url" content="https://cfdcircle.vn" />
+    <meta property="og:site_name" content="CFD Circle" />
+    <meta property="og:image" content="hinh-thumnail-facebook.jpg" />
+
+    <!-- Loading css -->
+    <style>
+      /* .loading {
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--black-cl);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 700;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .loading.--hide {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+      }
+
+      .loading__outer {
+        height: 4px;
+        width: 160px;
+        background-color: #ffffff;
+      }
+      .loading-inner {
+        height: 4px;
+        background-color: #bea67c;
+        animation: loading 2.5s forwards cubic-bezier(0, 0, 0, 0);
+      }
+      .loading__number {
+        font-family: pb;
+        font-size: 1.5rem;
+        line-height: normal;
+        letter-spacing: 0.15rem;
+        color: #ffffff;
+      } */
+    </style>
+
+    <link rel="stylesheet" href="./dest/style.min.css" />
+    <link rel="stylesheet" href="./dest/fonts.css" />
+  </head>
+
+  <body>
+    <!-- loading -->
+    <!-- <div class="loading">
+      <div class="loading__outer">
+        <div class="loading-inner"></div>
+      </div>
+      <div class="loading__number"></div>
+    </div> -->
+    <header class="header">
+      <div class="container">
+        <div class="header__left">
+          <a class="header__left-logo" href="./">
+            <img src="./img/logo.svg" alt="logo" />
+          </a>
+          <div class="header__left-line"></div>
+          <ul class="header__left-menu">
+            <li>
+              <a class="menu-txt --active" href="#">home</a>
+            </li>
+            <li><a class="menu-txt" href="#">about</a></li>
+            <li><a class="menu-txt" href="#">pricing</a></li>
+            <li><a class="menu-txt" href="#">tokens</a></li>
+            <li><a class="menu-txt" href="#">blog</a></li>
+            <li><a class="menu-txt" href="#">contact us</a></li>
+          </ul>
+        </div>
+        <div class="header__right">
+          <a
+            href="https://cfdcircle.vn/"
+            class="header__right-btn btn-text btn-text-small"
+            target="_blank"
+          >
+            download app
+          </a>
+          <!-- <div class="header__right-btnmenu --hover">
+            <span class="hambergur"></span>
+          </div> -->
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- sc hero -->
+      <section class="hero">
+        <img class="blur --dark" src="./img/blur-dark.png" alt="#" />
+        <div class="container">
+          <div class="textbox">
+            <h1 class="heading --lv1">
+              Buy, trade, and hold 350+ cryptocurrencies
+            </h1>
+            <p class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+              nulla suspendisse tortor aenean dis placerat.
+            </p>
+            <div class="textbox-btn">
+              <a href="https://cfdcircle.vn/" class="btn-text" target="_blank"
+                >Download App</a
+              >
+              <a href="#" class="btn-text btn-second">view pricing</a>
+            </div>
+          </div>
+          <div class="planet">
+            <img class="blur --light" src="./img/blur-blue.png" alt="#" />
+            <img class="blur --img" src="./img/home-planet.png" alt="#" />
+          </div>
+        </div>
+      </section>
+
+      <!-- sc partner -->
+      <section class="partner">
+        <p>Finance flow has been featured on</p>
+        <div class="partner__logo">
+          <img src="./img/home-icon-company-1.svg" alt="#" />
+          <img src="./img/home-icon-company-2.svg" alt="#" />
+          <img src="./img/home-icon-company-3.svg" alt="#" />
+          <img src="./img/home-icon-company-4.svg" alt="#" />
+          <img src="./img/home-icon-company-5.svg" alt="#" />
+        </div>
+      </section>
+
+      <!-- sc crypto -->
+      <section class="crypto">
+        <div class="container">
+          <div class="textbox center">
+            <h2 class="heading --lv2">Build your crypto portfolio</h2>
+            <p class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+              nulla suspendisse tortor aene.
+            </p>
+          </div>
+
+          <div class="crypto__list">
+            <!-- item1 -->
+            <figure class="crypto__list-item">
+              <div class="crypto__list-item-content">
+                <div class="contain">
+                  <img src="./img/icon-send.svg" alt="#" />
+                  <h3><a class="heading --lv3" href="#">Send & Receive</a></h3>
+                  <p class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Feugiat nulla suspendisse tortor aene.
+                  </p>
+                </div>
+              </div>
+            </figure>
+
+            <!-- item2 -->
+            <figure class="crypto__list-item">
+              <div class="crypto__list-item-content">
+                <div class="contain">
+                  <img src="./img/icon-wallet.svg" alt="#" />
+                  <h3>
+                    <a class="heading --lv3" href="#">100% Secure Wallet</a>
+                  </h3>
+                  <p class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Feugiat nulla suspendisse tortor aene.
+                  </p>
+                </div>
+              </div>
+            </figure>
+
+            <!-- item3 -->
+            <figure class="crypto__list-item">
+              <div class="crypto__list-item-content">
+                <div class="contain">
+                  <h3>
+                    <a class="heading --lv3" href="#">iOS & Android App</a>
+                  </h3>
+                  <p class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Feugiat nulla suspendisse tortor aene.
+                    <img src="./img/iPhone14.png" alt="#" />
+                  </p>
+                </div>
+              </div>
+            </figure>
+
+            <!-- item4 -->
+            <figure class="crypto__list-item">
+              <div class="crypto__list-item-content">
+                <div class="contain">
+                  <img src="./img/icon-chart.svg" alt="#" />
+                  <h3>
+                    <a class="heading --lv3" href="#">Trading Charts</a>
+                  </h3>
+                  <p class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Feugiat nulla suspendisse tortor aene.
+                  </p>
+                </div>
+              </div>
+            </figure>
+
+            <!-- item5 -->
+            <figure class="crypto__list-item">
+              <div class="crypto__list-item-content">
+                <div class="contain">
+                  <img src="./img/icon-trading.svg" alt="#" />
+                  <h3>
+                    <a class="heading --lv3" href="#">Real Time Trading</a>
+                  </h3>
+                  <p class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Feugiat nulla suspendisse tortor aene.
+                  </p>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- javascript -->
+    <script type="text/javascript" src="./dest/jsmain.min.js"></script>
+    <script type="text/javascript" src="./dest/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+html {
+    font-size: var(--font-size-df); //1rem= 10px;
+
+    body {
+        overflow-x: hidden;
+        background-color: var(--dark-blue-cl);
+        max-width: var(--max-width-page);
+        width: 100%;
+        font-family: dmr;
+        margin: auto;
+        padding: (0 var(--pd-page));
+        letter-spacing: var(--letter-spacing-body);
+        line-height: var(--line-height-body);
+        font-size: var(--font-size-body);
+        color: var(--white-cl);  
+        scroll-behavior: smooth;
+        position: relative;
+
+        .container {
+            width: 100%;
+            max-width: var(--container-mwidth);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 var(--container-pdLR);
+            position: relative;
+        }
+
+        main {
+            position: relative;
+
+            section {
+                &.--ptb{
+                    padding: var(--section-pd) 0;
+                }
+                &.--pt{
+                    padding-top: var(--section-pd);
+                }
+                &.--pb{
+                    padding-bottom: var(--section-pd);
+                }
+                
+            }
+        }
+    }
+}

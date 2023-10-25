@@ -1,0 +1,144 @@
+:root {
+    //gap 
+    --gap: 26px;
+    --column-grid: 76px;
+
+    // page
+    --max-width-page: 2560px;
+    --pd-page: 20px;
+
+    /* container */ 
+    --container-pdLR: 28px;
+    --container-mwidth: calc(1198px + calc(var(--container-pdLR) * 2)); // 1196px + gap*2
+
+    // color
+    --light-blue-cl: #0328EE;
+    --white-cl: #FFFFFF;
+    --dark-blue-cl: #010725;
+    --blue-cl: #010D50;
+    --blue-hover-cl: #031FB4;
+    --btn-second-cl: rgba(255, 255, 255, 0.10);
+
+    /* font size */
+    // default
+    --font-size-df: 62.5%;
+    // h1
+    --font-size-lv1: 6.6rem;
+    --line-height-lv1: 8rem;
+    --letter-spacing-lv1: -0.1rem;
+    // h2
+    --font-size-lv2: 4.2rem;
+    --line-height-lv2: 5.5rem;
+    --letter-spacing-lv2: 0;
+    // h3
+    --font-size-lv3: 1.8rem;
+    --line-height-lv3: 2.6rem;
+    --letter-spacing-lv3: 0.09rem;
+    // label
+    --font-size-label: 1.8rem;
+    --line-height-label: 2.6rem;
+    --letter-spacing-label: 0.09rem;
+    // body1
+    --font-size-body: 1.8rem;
+    --line-height-body: 3.2rem;
+    --letter-spacing-body: 0;
+    // body2
+    --font-size-body2: 1.6rem;
+    --line-height-body2: 2.6rem;
+    --letter-spacing-body2: 0;
+    //textbtn
+    --font-size-textbtn: 1.6rem;
+    --line-height-textbtn: 1.6rem;
+    --letter-spacing-textbtn: 0.16rem;
+    //textmenu
+    --font-size-menutxt: 1.4rem;
+    --line-height-menutxt: 1.6rem;
+    --letter-spacing-menutxt: 0.14rem;
+    //texttag
+    --font-size-tagtxt: 1.4rem;
+    --line-height-tagtxt: 1.8rem;
+    --letter-spacing-tagtxt: 0.07rem;
+
+    // /* section  */
+    // --section-pd: 120px;
+    /* header */
+    --header-height: 132px;
+    // footer
+    --footer-height: 684px;
+    // btn
+    --btn-height: 70px;
+    --btn-small-height: 56px;
+    --btn-icon-l: 68px;
+    --btn-icon: 46px;
+    // border-radius
+    --border-radius: 80px;
+    // time transition
+    --time-transition: 0.3s;
+
+
+    // responsive
+    // screen <= 1440 px
+    @include lg {
+        
+    }
+    // screen < 1200px
+    @include md {
+
+    }
+    // screen < 992px
+    @include sm {
+        --container-mwidth: 960px;
+        --section-pdTB: 90px;
+        --font-size-df: 57.5%;
+        --gap : 25px;
+    }
+    // screen < 768px
+    @include xs {
+        --container-fluid-pdLR: 15px;
+        --container-mwidth: 100%;
+        --container-pdLR: 15px;
+        --section-pdTB: 60px;
+        
+        /* font size */
+        // default
+        --font-size-df: 62.5%;
+        // h1
+        --font-size-lv1: 5.6rem;
+        --line-height-lv1: normal;
+        --letter-spacing-lv1: 0.448rem;
+        // h2
+        --font-size-lv2: 3.8rem;
+        --line-height-lv2: 4.2rem;
+        --letter-spacing-lv2: 0.152rem;
+        // h3
+        --font-size-lv3: 1.6rem;
+        --line-height-lv3: .2rem;
+        --letter-spacing-lv3: 0.064rem;
+        // body
+        --font-size-body: 1.5rem;
+        --line-height-body: 2rem;
+        --letter-spacing-body: 0.06rem;
+        //textbtn
+        --font-size-textbtn: 1.2rem;
+        --line-height-textbtn: normal;
+        --letter-spacing-textbtn: 0.12rem;
+        //small
+        --font-size-small: 1.2rem;
+        --line-height-small: normal;
+        --letter-spacing-small: 0.048rem;
+        // header
+        --header-height: 64px;
+        // footer
+        --footer-height: 92px;
+         // btn
+         --btn-height: 34px;
+    }   
+    // screen < 576px
+    @include xxs {
+
+    }
+    // screen < 376px
+    @include xxxs {
+
+    }
+}
