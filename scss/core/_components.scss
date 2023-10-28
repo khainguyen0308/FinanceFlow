@@ -245,10 +245,25 @@
     }
 }
 
+// label
+.label {
+    font-size: var(--font-size-label);
+    line-height: var(--line-height-label);
+    letter-spacing: var(--letter-spacing-label);
+    text-transform: uppercase;
+}
+
 // blur
 .blur{
     pointer-events: none;
     z-index: -1;
+}
+
+// grid-12
+.grid-column-12 {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(12, 1fr);
 }
 
 // textbox center
@@ -264,6 +279,41 @@
     }
 }
 
+// textbox left 
+.textbox.left {
+    .h2 {
+        max-width: 475px;
+    }
+    .desc {
+        margin-top: 19px;
+    }
+}
+
+// textbox flex
+.textbox-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+        max-width: max-content;
+    }
+    .desc {
+        max-width: 461px;
+    }
+}
+
+// list-icons
+.list-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    &-item{
+        display: flex;
+        align-items: center;
+        gap: 17px;
+    }
+}
+
 // menu item
 .menu-txt {
     font-family: dmm;
@@ -273,6 +323,7 @@
     text-transform: uppercase;
     cursor: pointer;
     display: inline-block;
+    color: var(--white-cl);
 }
 
 // button (text)
@@ -284,9 +335,11 @@
     color: var(--white-cl);
     text-transform: uppercase;
     height: var(--btn-height);
+    max-width: max-content;
     padding: 0 32px;
     @include midflex();
     cursor: pointer;
+    gap: 8px;
     background-color: var(--light-blue-cl);
     border-radius: var(--border-radius);
     @include transition(var(--time-transition));
@@ -299,9 +352,123 @@
     &.btn-second:hover {
         background-color: var(--light-blue-cl);
     }
+    &.btn-white {
+        background-color: var(--white-cl);
+        color: var(--light-blue-cl);
+    }
+    &.btn-white:hover {
+        background-color: var(--blue-cl);
+        color: var(--white-cl);
+    }
 }
 
 .btn-text:hover {
-    background-color: var(--blue-hover-cl);
+    background-color: var(--blue-cl);
+}
+
+// author
+.author {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    &__img {
+        @include size (58px,58px,true);
+        overflow: hidden;
+        img {
+            @include centerImg()
+        }
+    }
+    &__info {
+        h5 {
+            text-transform: uppercase;
+            font-size: var(--font-size-lv5);
+            line-height: var(--line-height-lv5);
+            letter-spacing: var(--letter-spacing-lv5);
+        }
+        p {
+            text-transform: uppercase;
+            font-size: var(--font-size-lv5);
+            line-height: var(--line-height-lv5);
+            letter-spacing: var(--letter-spacing-lv5);
+        }
+
+    }
+}
+
+// button play
+.play-btn {
+    @include size (100px,100px,true);
+    background-color: rgba($color: #FFFFFF, $alpha: 0.2);
+    position: relative;
+    @include transition(var(--time-transition));
+    svg {
+        @include midabs();
+        path {
+            @include transition(var(--time-transition));
+        }
+    }
+}
+
+// Pop up
+.popup {
+    
+    background-color: var(--dark-blue-cl);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 500;
+    @include fullscreen("true");
+    @include midflex();
+    @include transition(var(--time-transition));
+
+    &__video {
+        width: 60%;
+        aspect-ratio: 16/9;
+        position: relative;
+        &-inner {
+            background-color: var(--dark-blue-cl);
+            @include centerImg();
+            border: 4px solid var(--blue-cl);
+            @include midabs();
+        }
+        &-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            @include midflex();
+            @include transition(var(--time-transition));
+        }
+        &-close:hover {
+            background-color: var(--blue-cl);
+        }
+    }
+}
+.popup.show {
+    opacity: 0.9;
+    visibility: visible;
+}
+
+// button btt
+.btt-btn {
+    @include size(50px,50px,true);
+    background-color: var(--light-blue-cl);
+    @include midflex();
+    position: fixed;
+    bottom: 45px;
+    transform: translateY(500%);
+    right: clamp(var(--container-pdLR), calc((100vw - var(--container-mwidth)) / 2 + var(--container-pdLR)), 9999px);;
+    cursor: pointer;
+    @include transition(var(--time-transition));
+}
+.btt-btn.show {
+    transform: translateY(50%);
+}
+.btt-btn:hover {
+    background-color: var(--white-cl);
+    svg path {
+        stroke: var(--blue-cl);
+    }
 }
 
