@@ -1,0 +1,325 @@
+// section blog
+.blog {
+    padding-top: 160px;
+    padding-bottom: 92px;
+    .textbox-flex {
+        align-items: center;
+        .desc{ 
+            max-width: 568px;
+        }
+    }
+
+    &__content {
+        margin-top: 48px;
+        display: flex;
+        gap: 31px;
+        background-color: var(--blue-cl);
+        border-radius: 40px;
+        overflow: hidden;
+        &-text {
+            padding: 58px 47px;
+            
+            h2 {
+                max-width: 487px;
+                margin-top: 21px;
+                .heading.--lv2 {
+                    font-size: 2.8rem;
+                    line-height: 4rem;
+                    letter-spacing: 0.028rem;
+                    @include transition(var(--time-transition))
+                }
+                .heading.--lv2:hover {
+                    color: var(--light-blue-cl);
+                }
+            }
+            .desc {
+                max-width: 463px;
+                margin-top: 16px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .author {
+                display: none;
+            }
+        }
+        &-img {
+            .aspect {
+                @include aspRatio(586,334);
+                img {
+                    @include centerImg();
+                    @include transition(var(--time-transition))
+                }
+            }
+            .aspect:hover img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// section subcribe
+.subcribe {
+    padding: 84px 0;
+    background-color: var(--light-blue-cl);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__content {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        h2 {
+            max-width: 572px;
+        }
+    }
+    &__form {
+        background-color: var(--white-cl);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 100px;
+        height: 80px;
+        width: 480px;
+        padding: 8px 8px 8px 16px;
+        input {
+            color: #010725;
+            border: none;
+            font-size: var(--font-size-body2);
+            line-height: var(--line-height-body2);
+            letter-spacing: var(--letter-spacing-body2);
+            width: 260px;
+            outline: 0;
+        }
+        input::placeholder {
+            color: #010725;
+            font-size: var(--font-size-body2);
+            line-height: var(--line-height-body2);
+            letter-spacing: var(--letter-spacing-body2);
+        }
+        input:focus {
+            border: none;
+        }
+        .btn-text {
+            height: 64px;
+            padding: 0 26px;
+        }
+        .btn-text:hover {
+            background-color: var(--blue-cl);
+            color: var(--white-cl);
+        }
+    }
+}
+
+// section posts
+.posts {
+    padding-top: 148px;
+    padding-bottom: 80px;
+    .textbox-flex {
+        align-items: center;
+        .posts__tabs {
+            display: flex;
+            gap: 16px;
+            &-tab {
+                height: 40px;
+                padding: 0 24px;
+                font-family: dmr;
+                font-size: var(--font-size-body2);
+                line-height: var(--line-height-body2);
+                letter-spacing: var(--letter-spacing-body2);
+                text-transform: initial;
+            }
+            &-tab.--active {
+                background-color: var(--light-blue-cl);
+            }
+        }
+    }
+    &__wrap {
+        margin-top: 56px;
+        .posts__list {
+            display: none;
+            gap: var(--gap);
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .posts__list.--active {
+            display: grid;
+        }
+    }
+    &__paging {
+        margin: 0 auto;
+        margin-top: var(--gap);
+        width: fit-content;
+        display: flex;
+        gap: 16px;
+        svg {
+            cursor: pointer;
+            rect,path {
+                @include transition(var(--time-transition));
+            }
+        }
+        svg:hover {
+            rect {
+                fill: var(--blue-cl);
+                fill-opacity: 1;
+            }
+            path {
+                stroke-opacity: 1;
+            }
+        }
+        .number-page {
+            display: flex;
+            gap: 16px;
+            span {
+                cursor: pointer;
+                font-size: 1.8rem;
+                line-height: 3.2rem;
+                @include transition(var(--time-transition));
+            }
+            span:hover {
+                color: var(--light-blue-cl);
+            }
+            span.--active {
+                color: var(--light-blue-cl);
+            }
+        }
+    }
+}
+// responsive Ipad Pro 12
+@include maxW(1024px) {
+    .blog {
+        &__content {
+            &-img {
+                .aspect {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+// responsive mb
+@include xs {
+    // blog mb
+    .blog {
+        padding-top: 121px;
+        padding-bottom: 80px;
+        .textbox-flex {
+            display: initial;
+            .desc {
+                margin-top: 16px;
+                max-width: 320px;
+            }
+        }
+        &__content {
+            margin-top: 47px;
+            flex-direction: column-reverse;
+            gap: initial;
+            
+            &-text {
+                padding: 0 24px;
+                position: relative;
+                .tag {
+                    position: absolute;
+                    left: 24px;
+                    top: -36px; 
+                    transform: translateY(50%);
+                    z-index: 1;
+                }
+                h2 {
+                    margin-top: 23px;
+                }
+                .desc {
+                    display: initial;
+                }
+                .author {
+                    display: flex;
+                    position: relative;
+                    margin-top: 71px;
+                    margin-bottom: 36px;
+                }
+                .author::before {
+                    content: '';
+                    height: 1px;
+                    width: 336px;
+                    position: absolute;
+                    background-color: rgba(255,255,255,0.1);
+                    top: -38px;
+                }
+            }
+            
+        }
+    }
+
+    // subcribe mb
+    .subcribe {
+        padding: 80px 0;
+        .container {
+            flex-direction: column;
+        }
+        &__content{
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            h2 {
+                max-width: 350px;
+                text-align: center;
+            }
+        }
+        &__form {
+            flex-direction: column;
+            background-color: initial;
+            gap: 20px;
+            width: 100%;
+            height: initial;
+            input {
+                width: 100%;
+                border-radius: 100px;
+                border: 2px solid var(--white-cl, #FFF);
+                background: var(--white-cl, #FFF);
+                height: 80px;
+                padding-left: 16px;
+                margin-top: 20px;
+            }
+            .btn-text {
+                background-color: var(--blue-cl);
+                height: 70px;
+                max-width: initial;
+                width: 100%;
+                padding: 0 32px;
+            }
+            .btn-text:hover {
+                color: var(--light-blue-cl);
+                background-color: var(--white-cl);
+            }
+        }
+    }
+
+    // posts mb
+    .posts {
+        padding: 80px 0;
+        .textbox-flex {
+            flex-direction: column;
+            gap: 24px;
+
+            .posts__tabs {
+                flex-direction: column;
+                width: 100%;
+                &-tab {
+                    max-width: initial;
+                }
+            }
+        }
+
+        &__wrap {
+            margin-top: 24px;
+            .posts__list {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

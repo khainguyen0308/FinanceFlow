@@ -1,0 +1,343 @@
+
+// section title
+.title {
+    padding-top: 150px;
+    padding-bottom: 56px;
+    .textbox.center {
+        .desc{
+            margin-top: 21px;
+            max-width: 606px;
+        }
+    }
+}
+
+// section drivers
+.drivers {
+    padding-top: 56px;
+    padding-bottom: 116px;
+    .blur.--dark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-13%, -39%);
+        img {
+            max-width: 65%;
+        }
+    }
+    .textbox-flex {
+        .desc {
+            max-width: 465px;
+        }
+    }
+    &__list {
+        margin-top: 29px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 28px;
+
+        &-item {
+            display: flex;
+            gap: 24px;
+            align-items: start;
+            height: 246px;
+            background-color: var(--blue-cl);
+            border-radius: 40px;
+            padding: 58px 32px;
+            .content {
+                .desc {
+                    margin-top: 7px;
+                }
+            }
+        }
+    }
+}
+
+// section mission
+.mission {
+    padding-top: 116px;
+    padding-bottom: 90px;
+    &__left {
+        grid-column: 1/8;
+        .textbox {
+            max-width: 607px;
+            .desc {
+                margin-top: 16px;
+            }
+        }
+        .textbox:nth-child(2) {
+            margin-top: 78px;
+        }
+    }
+    &__right {
+        grid-column: 8/13;
+        .img {
+            img {
+                max-width: 641px;
+            }
+        }
+    }
+}
+// section Timeline
+.timeline {
+    padding-top: 90px;
+    padding-bottom: 66px;
+    
+    &__left {
+        grid-column: 1/5;
+        .textbox {
+            position: sticky;
+            position: -o-sticky;
+            position: -webkit-sticky;
+            top: calc(var(--header-height) + 100px);       
+            .desc {
+                margin-top: 16px;
+            }
+        }
+    }
+    &__right {
+        grid-column: 6/13;
+        &-item {
+            border-bottom: 1px solid var(--white-cl, #FFF);
+            padding-bottom: 40px;
+            padding-left: 78px;
+            margin-bottom: 80px;
+            position: relative;
+            .year {
+                font-family: dmb;
+                font-size: 2.8rem;
+                line-height: 3rem;
+                letter-spacing: 0.028rem;
+            }
+            .content {
+                margin-top: 22px;
+                .desc {
+                    margin-top: 12px;
+                }
+            }
+        }
+        &-item::before {
+            content: '';
+            @include size(24px,24px,true);
+            background-color: var(--white-cl);
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &-item:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// section team
+.team {
+    padding-top: 66px;
+    padding-bottom: 63px;
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 38px;
+        margin-top: 49px;
+
+        &-item {
+            border-radius: 40px;
+            padding: 24px;
+            background-color: var(--blue-cl);
+            .aspect-ratio {
+                @include aspRatio(327,400);
+                border-radius: 32px;
+                img {
+                    @include centerImg();
+                }
+            }
+            .info {
+                margin-top: 32px;
+                .name, .position {
+                    font-family: dmb;
+                    font-size: 1.6rem;
+                    line-height: 1.8rem;
+                    letter-spacing: 0.08rem;
+                    text-transform: uppercase;
+                }
+                .position {
+                    font-family: dmr;
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+}
+
+// section investors
+.investors {
+    padding-top: 63px;
+    padding-bottom: 230px;
+    .textbox.center {
+        .desc {
+            margin-top: 16px;
+            max-width: 496px;
+        }
+    }
+    .partner__logo {
+        margin-top: 41px;
+    }
+}
+
+// Responsive
+// responsive Ipad Pro 12
+@include maxW(1024px) {
+    .mission {
+        &__left {
+            grid-column: 1/7;
+        }
+        &__right {
+            grid-column: 7/13;
+        }
+    }
+
+    .investors {
+        padding-bottom: 200px;
+        .partner__logo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        img {
+            margin: 0 40px;
+            margin-bottom: 20px;
+        }
+        }
+    }
+}
+// responsive mb
+@include xs {
+    // title mb
+    .title {
+        padding-top: 121px;
+        padding-bottom: 24px;
+        .textbox.center {
+            align-items: initial;
+            .desc {
+                text-align: initial;
+                margin-top: 16px;
+            }
+        }
+    }
+    // driver mb
+    .drivers {
+        padding-top: 24px;
+        padding-bottom: 22px;
+        .textbox-flex {
+            display: initial;
+            max-width: 330px;
+            .heading.--lv2 {
+                max-width: 250px;
+            }
+            .desc {
+                max-width: 315px;
+                margin-top: 16px;
+            }
+        }
+        &__list {
+            grid-template-columns: 1fr;
+            grid-template-rows: initial;
+            gap: var(--gap);
+            &-item {
+                display: initial; 
+                gap: initial;
+                align-items: initial; 
+                height: initial;
+                .content {
+                    margin-top: 24px;
+                }
+            }
+        }
+    }
+    // mission mb
+    .mission {
+        padding-top: 22px;
+        padding-bottom: 40px;
+        .container {
+            grid-template-columns: 1fr;
+        }
+        &__left {
+            grid-column: initial;
+            .textbox:nth-child(2) {
+                margin-top: 80px;
+                margin-bottom: 64px;
+            }
+        }
+        &__right {
+            grid-column: initial;
+            .img {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    // timeline mb
+    .timeline {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        .container {
+            grid-template-columns: 1fr;
+        }
+        &__left {
+            grid-column: initial;
+            .textbox {
+                max-width: 330px;
+            }
+        }
+        &__right {
+            grid-column: initial;
+            margin-top: 40px;
+            &-item {
+                margin-bottom: 56px;
+                padding-left: 78px;
+                .content {
+                    .label {
+                        font-size: 1.8rem;
+                        line-height: 2.6rem;
+                        letter-spacing: 0.09rem;
+                    }
+                }
+            }
+        }
+    }
+
+    // team mb
+    .team {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        .textbox-flex {
+            display: initial;
+           
+            .desc {
+                margin-top: 16px;
+                max-width: 330px;
+            }
+        }
+        &__list {
+            grid-template-columns: 1fr;
+            margin-top: 24px;
+        }
+    }
+
+    // investors
+    .investors {
+        padding-top: 40px;
+        padding-bottom: 80px;
+        .partner__logo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            img {
+                margin: 0 20px;
+                margin-bottom: 16px;
+                width: 124px;
+            }
+        }
+    }
+}

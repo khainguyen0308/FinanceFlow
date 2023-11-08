@@ -1,0 +1,242 @@
+// sc contact
+.contact {
+    padding-top: 170px;
+    padding-bottom: 60px;
+    .container {
+        align-items: center;
+    }
+        &__form {
+            grid-column: 1/9;
+            padding-right: 39px;
+            form {
+                margin-top: 52px;
+                display: flex;
+                gap: 25px;
+                flex-wrap: wrap;
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                    width: 362px;
+                    margin-bottom: 7px;
+                    
+                    input,textarea { 
+                        margin-top: 12px;
+                        padding: 21px 25px;
+                        border-radius: 100px;
+                        border: 1px solid var(--dark-blue-cl);
+                        background: var(--blue-cl);
+                        color: var(--white-cl);
+                        font-family: dmr;
+                        font-size: 1.8rem;
+                        line-height: 2.7rem;
+                        outline: none;
+                        @include transition(var(--time-transition))
+                    }
+                    textarea {
+                        border-radius: 14px;
+                        width: 100%;
+                        height: 162px;
+                        resize: none;
+                    }
+                    
+                    input::placeholder,
+                    textarea::placeholder {
+                        color: var(--white-cl);
+                    }
+
+                    input:active, 
+                    textarea:active {
+                        border: 1px solid var(--white-cl);
+                    }
+
+                    input:hover, 
+                    textarea:hover {
+                        border: 1px solid var(--white-cl);
+                    }
+
+                    input:focus, 
+                    textarea:focus {
+                        border: 1px solid var(--light-blue-cl);
+                    }
+                    
+                    span {
+                        margin-left: 6px;
+                        margin-top: 12px;
+                        color: #EE0303;
+                        display: none;
+                    }
+                }
+                .form-group:nth-child(5) {
+                    width: 100%;
+                }
+                .form-group.invalid {
+                    input {
+                        border: 1px solid #EE0303;
+                    }
+                    span {
+                        display: initial;
+                    }
+                }
+                .form-submit {
+                    margin-top: -5px;
+                }
+            }
+        }
+        &__info {
+            grid-column: 9/13;
+            .desc {
+                margin-top: 15px;
+            }
+            .mail {
+                margin-top: 36px;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                &__item {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    span {
+                        color: var(--white-cl);
+                    }
+
+                }
+            }
+        }
+}
+
+// section faq
+.faq {
+    padding: 120px 0;
+    .heading.--lv1 {
+        text-align: center;
+    }
+    &__list {
+        margin-top: 80px;
+        .accordion {
+            grid-column: 3/11;
+            &__content {
+                padding: 32px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+                &-title {
+                    display: flex;
+                    justify-content: space-between;
+                    @include transition(var(--time-transition));
+                    cursor: pointer;
+                    
+                    h3 {
+                        font-size: 2.8rem;
+                        line-height: 3rem;
+                        letter-spacing: 0.028rem;
+                        position: relative;
+                    }
+                    .more {
+                        width: 27px;
+                        height: 27px;
+                        position: relative;
+                        span {
+                            width: 27px;
+                            height: 2px;
+                            background-color: var(--white-cl);
+                            position: absolute;
+                            opacity: 0.5;
+                            top: calc(50% - 2px);
+                            @include transition(var(--time-transition));
+                        }
+                        span:last-child {
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+                &-title.--active {
+                    .more {
+                        span:first-child {
+                            opacity: 0;
+                        }
+                        span:last-child {
+                            transform: initial;
+                        }
+                    }
+                }
+                &-title.--active~.accordion__content-text {
+                    position: initial;
+                    height: fit-content;
+                    opacity: 1;
+                }
+                &-text {
+                    position: absolute;
+                    margin-top: 32px;
+                    height: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                    @include transition(var(--time-transition) ease);
+                }
+            }  
+        }     
+    }
+}
+
+// responsive
+
+@include xs {
+    // sc contact mb
+    .contact {
+        padding-top: 121px;
+        padding-bottom: 40px;
+        .container {
+            grid-template-columns: 1fr;
+            overflow: auto;
+        }
+        &__form {
+            grid-column: initial;
+            padding-right: initial;
+            form {
+                gap: 0;
+                margin-top: 40px;
+                .form-group {
+                    margin-bottom: 24px;
+                }
+                .form-submit {
+                    margin-top: 8px;
+                    max-width: initial;
+                    width: 100%;
+                }
+            }
+        }
+        &__info {
+            grid-column: initial;
+            margin-top: 29px;
+            .desc {
+                margin-top: 19px;
+            }
+            .mail {
+                margin-top: 34px;
+            }
+        }
+    }
+
+    // sc faq
+    .faq {
+        padding-top: 40px;
+        padding-bottom: 106px;
+        &__list {
+            margin-top: 32px;
+            grid-template-columns: 1fr;
+            .accordion {
+                grid-column: initial;
+                &__content {
+                    padding: 24px 0;
+                    &-title {
+                        h3 {
+                            font-size: 1.8rem;
+                        }
+                    }
+                    &-text {
+                        margin-top: 24px;
+                    }
+                }  
+            }     
+        }
+    }
+}

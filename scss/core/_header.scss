@@ -8,7 +8,6 @@
    
     .container {
         height: 100%;
-        display: flex;
         @include midflex();
         justify-content: space-between;
     }
@@ -39,9 +38,6 @@
                     position: relative;     
                     @include transition(var(--time-transition));                 
                 }
-                a.--active {                   
-                    color: var(--yellow-cl);   
-                }
                 a.--active:after {
                     @include transform(scaleX(1));
                 }
@@ -63,6 +59,77 @@
                 @include transform(scaleX(1));
                 @include transform-origin(left);
         }           
+        }
+    }
+}
+.header.--bg-blue {
+    // background-color: linear-gradient(180deg, #010725 0%, transparent 100%);
+    background: linear-gradient(90deg, rgba(1,7,37,1) 0%, rgba(1,7,37,0) 100%);
+}
+
+// RESPONSIVE
+@include sm {
+    .header {
+        &__left {
+            &-line {
+                display: none;
+            }
+            &-menu {
+                display: none;
+            }
+
+        }
+        &__right {
+            &-btn {
+                display: none;
+            }
+            &-ham {
+                @include size(45px,45px,true);
+                background-color: var(--light-blue-cl);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center; 
+                .hambergur {
+                    display: block;
+                    width: 25px;
+                    height: 2px;
+                    background-color: var(--white-cl);
+                    position: relative;
+                    @include transition(var(--time-transition));
+                }
+                .hambergur::before,
+                .hambergur::after {
+                    content: '';
+                    display: block;
+                    width: 25px;
+                    height: 2px;
+                    position: absolute;
+                    background-color: var(--white-cl);
+                    @include transition(var(--time-transition));
+                }
+                .hambergur::before {
+                    top: 8px;
+                }
+                .hambergur::after {
+                    bottom: 8px;
+                }
+
+                .hambergur.active-menu {
+                    background-color: transparent;
+                    &:after {
+                      transform: rotate(-45deg);
+                      transform-origin: center;
+                      top: 50%;
+                    }
+                    
+                    &:before {
+                      transform: rotate(45deg);
+                      transform-origin: center;
+                      top: 50%
+                    }
+                }
+            }
         }
     }
 }

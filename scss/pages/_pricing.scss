@@ -1,0 +1,112 @@
+// sc price
+.price {
+    padding-top: 130px;
+    padding-bottom: 225px;
+    .textbox.center {
+        .desc {
+            margin-top: 16px;
+            max-width: 568px;
+        }
+    }
+    &__services {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--gap);
+        margin-top: 56px;
+        &-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 612px;
+            background-color: var(--blue-cl);
+            border-radius: 40px;
+            padding: 42px 30px;
+            .content {
+                margin-top: 6px;
+                .heading.--lv2 {
+                    margin-top: 16px;
+                }
+                .desc {
+                    margin-top: 16px;
+                }
+            }
+
+            .detail {
+                ul {
+                    margin-top: 8px;
+                    
+                    li {
+                        line-height: 2rem;
+                        padding: 8px 0;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                    li:before {
+                        content: '';
+                        @include size(6px,6px,true);
+                        background-color: var(--light-blue-cl);
+                        display: block;
+                    }
+                }
+                .btn-text {
+                    margin-top: 46px;
+                    max-width: initial;
+                }
+
+            }
+        }
+    }
+}
+
+// responsive
+@include xs {
+    .price {
+        padding-top: 121px;
+        padding-bottom: 80px;
+        .textbox.center {
+            align-items: initial;
+            .desc {
+                text-align: initial;
+                max-width: 315px;
+            }
+        }
+
+        &__services {
+            flex-direction: column;
+            gap: 38px;
+        }
+
+        &__list {
+            margin-top: 48px;
+            grid-template-columns: 1fr;
+            &-item {
+                .content {
+                    .heading.--lv2 {
+                        font-size: 4.2rem;
+                        line-height: 5.5rem;
+                    }
+                }
+                .detail {
+                    .label {
+                        font-size: 1.8rem;
+                        line-height: 2.6rem;
+                        letter-spacing: 0.09rem;
+                    }
+                }
+            }
+        }
+    }
+}
