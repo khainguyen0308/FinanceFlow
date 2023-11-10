@@ -2,6 +2,15 @@
 .contact {
     padding-top: 170px;
     padding-bottom: 60px;
+    .blur.--light {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(35%, -40%);
+        img {
+            max-width: initial;
+        }
+    }
     .container {
         align-items: center;
     }
@@ -65,12 +74,13 @@
                         color: #EE0303;
                         display: none;
                     }
+
                 }
                 .form-group:nth-child(5) {
                     width: 100%;
                 }
                 .form-group.invalid {
-                    input {
+                    input,textarea {
                         border: 1px solid #EE0303;
                     }
                     span {

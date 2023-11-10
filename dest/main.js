@@ -1,3 +1,4 @@
+
 //loading
 function loadPage () {
     function handlePercent (percent) {
@@ -296,21 +297,54 @@ function accordion () {
 accordion()
 
 // validate form
-// function validateForm() {
-//     let name = document.forms["form-contact"]["fullname"].value;
-//     const formGroup = document.querySelectorAll('.form-group')
-//   if (name == "") {
-//     alert("Name must be filled out");
-//     return false;
-//   }
-
-//   let email = document.forms["form-contact"]["email"].value;
-//   if (name == "") {
-//     alert("Name must be filled out");
-//     return false;
-//   }
-// }
-// const form = document.querySelector('#form-contact')
-// form.addEventListener('submit',function () {
-//     validateForm();
-// })
+function validateForm() {
+    let name = document.forms["form-contact"]["fullname"].value;
+    const inputs = document.querySelectorAll('.form-group .input')
+    const groups = document.querySelectorAll('.form-group')
+    const btnSub = document.querySelector('.form-submit')
+    inputs.forEach(input => input.addEventListener('focusout',function(){
+        let content = input.value;
+        let index = input.getAttribute('data-index');
+        if (content == "") {
+            groups.forEach(group => {
+                if(group.getAttribute('data-index') == index)
+                    group.classList.add('invalid')
+            } )
+        }
+        else {
+            groups.forEach(group => {
+                if(group.getAttribute('data-index') == index)
+                    group.classList.remove('invalid')
+            } )
+        }
+    })
+    )
+    let check = 0;
+    btnSub.addEventListener('click',function(e){
+        inputs.forEach(input => {
+            let content = input.value;
+            let index = input.getAttribute('data-index');
+            if (content == "") {
+                check++;
+                
+                groups.forEach(group => {
+                    if(group.getAttribute('data-index') == index)
+                        group.classList.add('invalid')
+                } )
+            }
+            else {
+                
+                groups.forEach(group => {
+                    if(group.getAttribute('data-index') == index)
+                        group.classList.remove('invalid')
+                } )
+            }
+        }
+        )
+        console.log(check)
+        if (check != 0) {
+            e.preventDefault();
+        }
+    })
+}
+validateForm();

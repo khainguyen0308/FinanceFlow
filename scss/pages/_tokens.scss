@@ -1,0 +1,185 @@
+.tokens {
+    padding-top: 150px;
+    padding-bottom: 120px;
+    .textbox.center {
+        .desc {
+            max-width: 568px;
+        }
+    }
+    &__grid {
+        margin-top: 101px;
+        display: grid;
+        grid-template-columns: 3fr 3fr 2.4fr 2.4fr 1.2fr;
+        .tokens__grid-title {
+            text-transform: uppercase;
+            font-family: dmb;
+            font-size: 1.6rem;
+            line-height: 1.8rem;
+            letter-spacing: 0.1rem;
+            height: 99px;
+            display: flex;
+            align-items: center;
+            padding-left: 11px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+        }
+        &-name {
+            &-coin {
+                height: 133px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+                p {
+                    font-family: dmb;
+                    font-size: 1.8rem;
+                    line-height: 2rem;
+                }
+                span {
+                    display: flex;
+                    align-items: center;
+                    height: 26px;
+                    padding: 0 8px;
+                    color: var(--white-cl);
+                    background-color: var(--blue-cl);
+                    border-radius: 1000px;
+                    font-size: 1.2rem;
+                    line-height: 1.2rem;
+                    letter-spacing: 0.06rem;
+                    cursor: pointer;
+                    @include transition(var(--time-transition));
+                }
+                span:hover {
+                    color: var(--light-blue-cl);
+                    background-color: var(--white-cl);
+                }
+            }
+        }
+        &-description{
+            &-desc {
+                padding-left: 10px;
+                max-width: 258px;
+                height: 133px;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            }
+        }
+        &-market {
+            &-money {
+                height: 133px;
+                font-family: dmb;
+                font-size: var(--font-size-body2);
+                line-height: var(--line-height-body2);
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            }
+        }
+        &-volume {
+            &-money {
+                height: 133px;
+                font-family: dmb;
+                font-size: var(--font-size-body2);
+                line-height: var(--line-height-body2);
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            }
+        }
+        &-website {
+            &-link {
+                // padding-left: 10px;
+                height: 133px;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+                a {
+                    text-decoration-line: underline;
+                    color: var(--white-cl);
+                }
+            }
+        }
+    }
+}
+
+// responsive
+@include xs {
+    .tokens {
+        padding-top: 121px;
+        padding-bottom: 80px;
+        .textbox.center {
+            align-items: initial;
+            .desc {
+                text-align: initial;
+                max-width: 320px;
+            }
+        }
+        &__grid {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: 1fr;
+            .tokens__grid-title {
+                height: initial;
+                display: flex;
+                align-items: center;
+                padding-left: 0px;
+                margin-top: 32px;
+                border-bottom: none;
+            }
+            &-name {
+                &-coin {
+                    height: initial;
+                    margin-top: 16px;
+                    padding-bottom: 32px;
+                }
+                &-coin:not(:nth-child(2)) {
+                    display: none;
+                }
+            }
+            &-description{
+                border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+                &-desc {
+                    height: initial;
+                    margin-top: 16px;
+                    padding-bottom: 32px;
+                    padding-left: 0;
+                    border-bottom: none
+                }
+                &-desc:not(:nth-child(2)) {
+                    display: none;
+                }
+            }
+            &-market {
+                &-money {
+                    height: initial;
+                    margin-top: 16px;
+                    padding-bottom: 32px;
+                }
+                &-money:not(:nth-child(2)) {
+                    display: none;
+                }
+            }
+            &-volume {
+                &-money {
+                    height: initial;
+                    margin-top: 16px;
+                    padding-bottom: 32px;
+                }
+                &-money:not(:nth-child(2)) {
+                    display: none;
+                }
+            }
+            &-website {
+                &-link {
+                    height: initial;
+                    margin-top: 16px;
+                    padding-bottom: 32px;
+                    padding-left: 0;
+                }
+                &-link:not(:nth-child(2)) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

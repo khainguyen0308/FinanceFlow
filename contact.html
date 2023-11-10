@@ -98,9 +98,7 @@
           <div class="header__left-line"></div>
           <ul class="header__left-menu">
             <li>
-              <a class="menu-txt item-menu --active" href="./index.html"
-                >home</a
-              >
+              <a class="menu-txt item-menu" href="./index.html">home</a>
             </li>
             <li><a class="menu-txt item-menu" href="./about.html">about</a></li>
             <li>
@@ -111,7 +109,9 @@
             </li>
             <li><a class="menu-txt item-menu" href="./blog.html">blog</a></li>
             <li>
-              <a class="menu-txt item-menu" href="./contact.html">contact us</a>
+              <a class="menu-txt item-menu --active" href="./contact.html"
+                >contact us</a
+              >
             </li>
           </ul>
         </div>
@@ -134,7 +134,7 @@
       <ul class="nav__menu">
         <img class="blur" src="./img/blur-blue.png" alt="#" />
         <li>
-          <a class="menu-txt item-nav --active" href="./index.html">Home</a>
+          <a class="menu-txt item-nav" href="./index.html">Home</a>
         </li>
         <li>
           <a class="menu-txt item-nav" href="./about.html">About</a>
@@ -149,7 +149,9 @@
           <a class="menu-txt item-nav" href="./blog.html">Blog</a>
         </li>
         <li>
-          <a class="menu-txt item-nav" href="./contact.html">contact us</a>
+          <a class="menu-txt item-nav --active" href="./contact.html"
+            >contact us</a
+          >
         </li>
 
         <a
@@ -163,14 +165,24 @@
     </nav>
     <main>
       <section class="contact">
+        <div class="blur --light">
+          <img src="./img/blur-blue.png" alt="#" />
+        </div>
         <div class="container grid-column-12">
           <div class="contact__form">
             <h1 class="heading --lv1">Get in touch</h1>
-            <form id="form-contact" name="form-contact" action="#">
+            <form
+              id="form-contact"
+              name="form-contact"
+              onsubmit="validateForm()"
+              action="#"
+            >
               <!-- form-group 1 -->
-              <div class="form-group">
+              <div class="form-group" data-index="1">
                 <label for="fullname" class="form-label label">name*</label>
                 <input
+                  class="input"
+                  data-index="1"
                   id="fullname"
                   name="fullname"
                   placeholder="Full Name"
@@ -179,9 +191,11 @@
                 <span class="form-message">Please fill in this field</span>
               </div>
               <!-- form-group 2 -->
-              <div class="form-group">
+              <div class="form-group" data-index="2">
                 <label for="email" class="form-label label">Email*</label>
                 <input
+                  class="input"
+                  data-index="2"
                   id="email"
                   name="email"
                   placeholder="email@example.com"
@@ -190,9 +204,11 @@
                 <span class="form-message">Please fill in this field</span>
               </div>
               <!-- form-group 3 -->
-              <div class="form-group">
+              <div class="form-group" data-index="3">
                 <label for="company" class="form-label label">Company</label>
                 <input
+                  class="input"
+                  data-index="3"
                   id="company"
                   name="company"
                   placeholder="Company Name"
@@ -201,9 +217,11 @@
                 <span class="form-message">Please fill in this field</span>
               </div>
               <!-- form-group 4 -->
-              <div class="form-group">
+              <div class="form-group" data-index="4">
                 <label for="subject" class="form-label label">Subject*</label>
                 <input
+                  class="input"
+                  data-index="4"
                   id="subject"
                   name="subject"
                   placeholder="How can we help?"
@@ -213,9 +231,11 @@
               </div>
 
               <!-- form-group 5 -->
-              <div class="form-group">
+              <div class="form-group" data-index="5">
                 <label for="message" class="form-label label">Message*</label>
                 <textarea
+                  class="input"
+                  data-index="5"
                   name="message"
                   id="message"
                   cols="30"
@@ -225,7 +245,9 @@
                 <span class="form-message">Please fill in this field</span>
               </div>
 
-              <button class="form-submit btn-text">Send Message</button>
+              <button type="submit" class="form-submit btn-text">
+                Send Message
+              </button>
             </form>
           </div>
           <div class="contact__info">
